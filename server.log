@@ -1,0 +1,654 @@
+/Users/yacinebenhamou/Library/Python/3.14/lib/python/site-packages/langchain_core/_api/deprecation.py:26: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+INFO:     Started server process [22539]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:63167 - "WebSocket /ws" [accepted]
+INFO:     connection open
+🚀 Starting Antigravity Visual Agent Server...
+🚀 WebSocket connection established
+INFO:     127.0.0.1:63690 - "HEAD /antigravity HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:63773 - "GET /antigravity HTTP/1.1" 200 OK
+INFO:     connection closed
+INFO:     127.0.0.1:50125 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:52081 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:52473 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:54619 - "WebSocket /ws" [accepted]
+INFO:     connection open
+INFO:     connection closed
+INFO:     127.0.0.1:58215 - "WebSocket /ws" [accepted]
+INFO:     connection open
+❌ WebSocket disconnected
+🚀 WebSocket connection established
+❌ WebSocket disconnected
+🚀 WebSocket connection established
+❌ WebSocket disconnected
+🚀 WebSocket connection established
+❌ WebSocket disconnected
+🚀 WebSocket connection established
+❌ WebSocket disconnected
+🚀 WebSocket connection established
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49707 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49709 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49762 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49762 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49762 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49762 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49832 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49943 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49943 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49943 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49943 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50009 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50009 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50009 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50009 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50022 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50022 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50022 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50022 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50011 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50026 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50082 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50158 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50152 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50223 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50217 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50277 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50277 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50283 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50340 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50340 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50346 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50394 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50394 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50400 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50454 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50454 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50460 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50501 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50531 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50578 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50578 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50584 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50641 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50695 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50695 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50701 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50756 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50805 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50805 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50812 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50875 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50928 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50928 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50934 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50981 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50981 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50987 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51035 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51035 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51089 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51089 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51095 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51144 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51144 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51150 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51188 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51218 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51267 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51267 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51273 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51330 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51330 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51336 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51387 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51387 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51393 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51441 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51441 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51447 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51509 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51509 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51515 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51553 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51587 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51649 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51697 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51697 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51703 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52213 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52213 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52213 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52213 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52574 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52574 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52574 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52574 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52870 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52870 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52870 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52870 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53179 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53179 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53179 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53179 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53532 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53862 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55395 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55395 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55395 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55395 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56686 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56686 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56686 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56686 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56989 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56989 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56989 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56989 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57280 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57280 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57280 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57280 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58163 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58163 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58163 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58163 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58823 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58823 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58823 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58823 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59492 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59492 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59492 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59492 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59814 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60132 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60132 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60132 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60132 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61056 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61056 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61056 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61056 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61675 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61675 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61675 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61675 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62107 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62107 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62107 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62107 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63052 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63052 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63052 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63052 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63731 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63731 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63731 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63731 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64088 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64088 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64088 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64088 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64430 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64430 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64430 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64430 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64829 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64829 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64829 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64829 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65240 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65240 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65240 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65240 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49515 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49515 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49515 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49515 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49876 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50210 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50210 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50210 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50210 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50483 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50483 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50483 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50483 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50801 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50801 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50801 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50801 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51484 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51836 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51836 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51836 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51836 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52135 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52135 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52135 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52135 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52444 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52444 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52444 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52444 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52750 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53649 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53649 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53649 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53649 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54125 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54125 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54125 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54125 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54425 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54425 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54425 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54425 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54746 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54746 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54746 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54746 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55041 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55331 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55643 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55949 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55949 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55949 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55949 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56270 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56577 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56577 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56577 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56577 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56908 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56908 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56908 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56908 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57503 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57741 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57743 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57741 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57743 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57741 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57741 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57743 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57743 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57741 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57857 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57853 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57853 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57955 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57957 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57955 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58071 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58075 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58071 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58247 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58373 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58369 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58462 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58466 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58462 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58565 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58568 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58565 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58673 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58677 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58673 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58774 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58778 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58774 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58900 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58973 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58975 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58973 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58973 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59085 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59084 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59194 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59192 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59192 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59291 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59293 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59291 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59387 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59389 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59387 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59493 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59495 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59493 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59603 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59602 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59602 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59701 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59702 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59701 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59796 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59794 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59794 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59887 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59889 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59887 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59986 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59988 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59986 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60103 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60190 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60190 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60190 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60190 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60242 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60244 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60242 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60349 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60349 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60361 - "GET /models HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60361 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60488 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60488 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60396 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60588 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60588 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60612 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60700 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60700 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60714 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60808 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60808 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60824 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60880 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60880 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60880 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60880 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60934 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60934 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61036 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61036 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61051 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61148 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61148 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61162 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61244 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61244 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61259 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61366 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61366 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61385 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61470 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61470 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61485 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61528 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61528 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61528 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61528 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61579 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61579 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61594 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61677 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61677 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61691 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61772 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61790 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61868 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61868 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61868 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61868 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61892 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61892 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61979 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61996 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61996 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62078 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62096 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62096 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62157 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62157 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62157 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62157 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /system/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /system/status HTTP/1.1" 200 OK

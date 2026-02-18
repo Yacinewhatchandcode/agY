@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8080:8080"
+    environment:
+      - BASE_URL=http://localhost:8080/
+      - INSTANCE_NAME=local-deepsearch
+    volumes:
+      - searxng-data:/etc/searxng
+    restart: unless-stopped
+
+  deepsearch:
+    build:
+      context: ./local-deep-researcher
+      dockerfile: Dockerfile
+    container_name: deepsearch
+    depends_on:
+      - searxng
+    environment:
+      - LLM_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - SEARCH_API=searxng
+      - SEARXNG_URL=http://searxng:8080
+      - LOCAL_LLM=deepseek-r1:7b
+      - MAX_WEB_RESEARCH_LOOPS=3
+    ports:
+      - "2024:2024"
+    restart: unless-stopped
+
+volumes:
+  searxng-data:
