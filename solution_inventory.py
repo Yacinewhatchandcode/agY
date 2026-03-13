@@ -250,11 +250,11 @@ KNOWN_SERVICES: dict[str, list[str]] = {
     "nullclaw":     ["http://127.0.0.1:3001"],
     "agent-zero":   ["http://127.0.0.1:5001"],
     "nanobot":      ["http://127.0.0.1:8080"],
-    "AgentY":       ["http://127.0.0.1:5173", "http://127.0.0.1:8000"],
+    "AgentY":       ["http://[::1]:5173", "http://127.0.0.1:5173", "http://127.0.0.1:8000"],
     "agY":          ["http://127.0.0.1:8011"],
     "Prime.AI":     ["http://127.0.0.1:3000"],
     "bytebot":      ["http://127.0.0.1:9990", "http://127.0.0.1:9991", "http://127.0.0.1:9992"],
-    "firecrawl":    ["http://127.0.0.1:3002", "http://127.0.0.1:27017"],
+    "firecrawl":    ["http://127.0.0.1:3002"],
     # Colony workers (Docker ByteBot fleet)
     "colony-concierge":  ["http://127.0.0.1:10092"],
     "colony-research":   ["http://127.0.0.1:10192"],
@@ -766,18 +766,27 @@ class SolutionInventoryService:
         )
 
         # ── SCREENSHOT CAPTURE: headless browser proof of live services ────
+        # Only screenshot services that responded to HTTP (not raw TCP like Redis)
+        # Skip self-capture (port 8011 = this dashboard server)
+        _SKIP_PORTS = {"6379", "27017", "5432", "8011"}
         screenshot_path = None
-        if any_port_open and live_urls:
-            # Pick the first URL that responded to HTTP, or just the first live URL
-            best_url = next(
-                (r["url"] for r in http_results if r["ok"]),
-                live_urls[0],
-            )
-            try:
-                import screenshot_prober
-                screenshot_path = screenshot_prober.capture(best_url, solution_id)
-            except Exception as exc:
-                log.warning("Screenshot capture error for %s: %s", solution_id, exc)
+        if any_http_ok:
+            from urllib.parse import urlparse
+            # Pick first HTTP-OK URL whose port is not in the skip list
+            best_url = None
+            for r in http_results:
+                if r["ok"]:
+                    parsed = urlparse(r["url"])
+                    port_str = str(parsed.port or "80")
+                    if port_str not in _SKIP_PORTS:
+                        best_url = r["url"]
+                        break
+            if best_url:
+                try:
+                    import screenshot_prober
+                    screenshot_path = screenshot_prober.capture(best_url, solution_id)
+                except Exception as exc:
+                    log.warning("Screenshot capture error for %s: %s", solution_id, exc)
 
         content_audit = self._content_semantic_audit(Path(item["path"]), item.get("local_urls", []))
         add_check(
@@ -816,6 +825,8 @@ class SolutionInventoryService:
             "checks": checks,
             "content_audit": content_audit,
             "screenshot_path": screenshot_path,
+            "discovered_urls": item.get("discovered_urls", []),
+            "local_urls": item.get("local_urls", []),
             "tested_at": time.time(),
         }
         self._tested_cache[cache_key] = result
@@ -943,7 +954,7 @@ class SolutionInventoryService:
         return results
 
     def _is_port_open(self, host: str, port: int) -> bool:
-        if host not in {"127.0.0.1", "localhost"}:
+        if host not in {"127.0.0.1", "localhost", "::1"}:
             return False
         # Try IPv4 first, then IPv6 (some services like Vite bind IPv6 only)
         for family, addr in [(socket.AF_INET, "127.0.0.1"), (socket.AF_INET6, "::1")]:
@@ -982,7 +993,9 @@ class SolutionInventoryService:
             if not candidate or candidate in seen:
                 continue
             seen.add(candidate)
-            if not candidate.startswith("http://127.0.0.1:") and not candidate.startswith("http://localhost:"):
+            if not (candidate.startswith("http://127.0.0.1:") or
+                    candidate.startswith("http://localhost:") or
+                    candidate.startswith("http://[::1]:")):
                 continue
             parsed = urlparse(candidate)
             port = parsed.port
