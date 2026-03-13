@@ -1094,6 +1094,10 @@ class SolutionInventoryService:
                         continue
                     if any(part in WALK_IGNORE_DIRS for part in rel_parts):
                         continue
+                    # Skip locale-specific subdirectories (the audit targets English)
+                    _LOCALE_DIRS = {"zh", "es", "fr", "de", "ja", "ko", "pt", "ru", "ar", "it", "nl", "pl", "tr"}
+                    if any(part.lower() in _LOCALE_DIRS for part in rel_parts):
+                        continue
                     suffix = candidate.suffix.lower()
                     if suffix not in allowed_suffixes:
                         continue
