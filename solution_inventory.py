@@ -812,9 +812,17 @@ class SolutionInventoryService:
         else:
             status = "pass"
 
-        passed_count = sum(1 for check in checks if check["passed"])
-        total_checks = len(checks)
-        score = int(round((passed_count / total_checks) * 100)) if total_checks else 0
+        # Smart scoring: exclude port_open/http_live from denominator
+        # for projects that have no *discovered* URLs (only guessed defaults)
+        has_real_service_urls = bool(item.get("discovered_urls"))
+        _irrelevant_if_no_urls = {"port_open", "http_live"}
+        relevant_checks = [
+            c for c in checks
+            if has_real_service_urls or c["name"] not in _irrelevant_if_no_urls
+        ]
+        passed_count = sum(1 for c in relevant_checks if c["passed"])
+        total_relevant = len(relevant_checks)
+        score = int(round((passed_count / total_relevant) * 100)) if total_relevant else 0
 
         result = {
             "solution_id": solution_id,
