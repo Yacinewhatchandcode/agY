@@ -5,7 +5,7 @@ import re
 import time
 import socket
 from html import unescape
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 from dataclasses import asdict, dataclass
@@ -1016,7 +1016,11 @@ class SolutionInventoryService:
                 request = Request(candidate, headers={"User-Agent": "agY-live-check/1.0"})
                 with urlopen(request, timeout=1.5) as response:
                     code = response.status
-                results.append({"url": candidate, "status": code, "ok": 200 <= code < 500})
+                results.append({"url": candidate, "status": code, "ok": True})
+            except HTTPError as he:
+                # 4xx/5xx still proves the service is alive and responding to HTTP
+                code = he.code
+                results.append({"url": candidate, "status": code, "ok": code < 500})
             except Exception as exc:
                 results.append({"url": candidate, "status": f"error:{type(exc).__name__}", "ok": False})
         return results[:8]
