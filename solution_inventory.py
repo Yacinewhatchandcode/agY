@@ -812,14 +812,19 @@ class SolutionInventoryService:
         else:
             status = "pass"
 
-        # Smart scoring: exclude port_open/http_live from denominator
-        # for projects that have no *discovered* URLs (only guessed defaults)
+        # Smart scoring: exclude irrelevant checks from the denominator
+        # so infra sub-modules aren't scored against full-stack criteria
         has_real_service_urls = bool(item.get("discovered_urls"))
-        _irrelevant_if_no_urls = {"port_open", "http_live"}
-        relevant_checks = [
-            c for c in checks
-            if has_real_service_urls or c["name"] not in _irrelevant_if_no_urls
-        ]
+        has_app_signals = bool(
+            item.get("frontend_signals") or item.get("backend_signals") or
+            item.get("launch_commands") or has_real_service_urls
+        )
+        _skip = set()
+        if not has_real_service_urls:
+            _skip.update({"port_open", "http_live"})
+        if not has_app_signals:
+            _skip.update({"frontend_signal", "backend_signal", "launch_commands", "access_urls"})
+        relevant_checks = [c for c in checks if c["name"] not in _skip]
         passed_count = sum(1 for c in relevant_checks if c["passed"])
         total_relevant = len(relevant_checks)
         score = int(round((passed_count / total_relevant) * 100)) if total_relevant else 0
