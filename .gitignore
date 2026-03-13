@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Screenshots (generated at runtime)
+static/screenshots/
+
+# Logs
+*.log
+server_stderr.log
+server_stdout.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp images
+*.png
+!static/*.png
+
+# Artifacts
+artifacts/
+quality/

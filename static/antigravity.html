@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antigravity AI Studio - Language Chains</title>
-    <link rel="stylesheet" href="/static/antigravity_minimal.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23ef4444'/%3E%3Cpath d='M12 5l5.2 9H6.8L12 5z' fill='white'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="/static/antigravity_minimal.css?v=20260312h">
 </head>
 
 <body>
-    <!-- Minimal Top Bar -->
     <div class="top-bar">
         <div class="agent-status">
             <div class="status-dot"></div>
@@ -20,19 +24,21 @@
                 value="https://python.langchain.com">
             <button id="navigateBtn">Go</button>
         </div>
+        <div class="cmd-bar">
+            <input type="text" id="commandInput" placeholder='Command (ex: search langchain agents)'>
+            <button id="runCommandBtn">Run</button>
+        </div>
         <div class="current-thought" id="currentThought">
             Ready to explore...
         </div>
         <div class="controls">
-            <button class="control-btn" id="refreshBtn" title="Refresh Screenshot">↻</button>
-            <button class="control-btn" id="analyzeBtn" title="Run AI Analysis">🧠</button>
-            <button class="control-btn" id="pauseBtn">⏸</button>
+            <button class="control-btn" id="refreshBtn" title="Refresh View">Refresh</button>
+            <button class="control-btn" id="analyzeBtn" title="Run Backend Analysis">Analyze</button>
+            <button class="control-btn" id="pauseBtn" title="Toggle Voice Mode">Voice</button>
         </div>
     </div>
 
-    <!-- Full Browser View -->
     <div class="browser-container">
-        <!-- Browser Screenshot/Content -->
         <div class="browser-content" id="browserContent">
             <div class="loading-placeholder">
                 <div class="spinner"></div>
@@ -40,52 +46,15 @@
             </div>
         </div>
 
-        <!-- Agent Cursor Overlay -->
-        <div class="agent-cursor" id="agentCursor">
-            <svg width="28" height="28" viewBox="0 0 24 24">
-                <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="#ef4444" stroke="#fff"
-                    stroke-width="1.5" />
-            </svg>
-        </div>
-
-        <!-- Element Highlight -->
         <div class="element-highlight" id="elementHighlight"></div>
 
-        <!-- Thinking Bubble (appears near cursor) -->
-        <div class="thinking-bubble" id="thinkingBubble">
-            <div class="bubble-text">Looking for navigation...</div>
-        </div>
-
-        <!-- Reasoning Overlay (bottom-left corner) -->
-        <div class="reasoning-overlay" id="reasoningOverlay">
-            <div class="reasoning-header">
-                <span>🧠 Reasoning</span>
-                <button class="minimize-btn" id="minimizeReasoning">−</button>
-            </div>
-            <div class="reasoning-content">
-                <div class="step active">
-                    <div class="step-icon">⟳</div>
-                    <div class="step-text">Analyzing DOM structure</div>
-                </div>
-                <div class="step pending">
-                    <div class="step-icon">○</div>
-                    <div class="step-text">Extract semantic data</div>
-                </div>
-                <div class="step pending">
-                    <div class="step-icon">○</div>
-                    <div class="step-text">Identify interactive elements</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Next Action Preview (bottom-right corner) -->
-        <div class="next-action" id="nextAction">
-            <div class="action-icon">🖱️</div>
-            <div class="action-text">Next: Click navigation menu</div>
+        <div class="backend-panel">
+            <div class="backend-header">Backend Stream</div>
+            <div class="thought-log" id="thoughtLog"></div>
         </div>
     </div>
 
-    <script src="/static/antigravity_minimal.js"></script>
+    <script src="/static/antigravity_minimal.js?v=20260312h"></script>
 </body>
 
 </html>

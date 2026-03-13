@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Control Center</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="/static/solutions_dashboard.css?v=20260313d">
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="title-wrap">
+                <p class="eyebrow">Workspace Reorganization</p>
+                <h1>Solution Control Center</h1>
+                <p class="subline">Unified view for all discovered projects with live structural tests and plain-language checks per page for non-technical users.</p>
+            </div>
+            <div class="header-actions">
+                <button id="rescanBtn" class="btn btn-primary">Rescan</button>
+                <button id="testMvpBtn" class="btn btn-strong">Test MVP 28</button>
+                <button id="testAllBtn" class="btn">Test All</button>
+                <a class="btn btn-ghost" href="/studio" target="_blank" rel="noopener">Open Browser Studio</a>
+            </div>
+        </header>
+
+        <section class="metric-row">
+            <article class="metric-card">
+                <h2 id="countProjects">0</h2>
+                <p>Top-Level Projects</p>
+            </article>
+            <article class="metric-card">
+                <h2 id="countFullStack">0</h2>
+                <p>Full-Stack Apps</p>
+            </article>
+            <article class="metric-card">
+                <h2 id="countMvp">0</h2>
+                <p>MVP Batch</p>
+            </article>
+            <article class="metric-card">
+                <h2 id="countDesktop">0</h2>
+                <p>Desktop/Tauri</p>
+            </article>
+        </section>
+
+        <section class="content-layout">
+            <aside class="sidebar">
+                <div class="panel">
+                    <h3>Views</h3>
+                    <div class="filters" id="filterGroup">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="mvp">MVP 28</button>
+                        <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+                        <button class="filter-btn" data-filter="backend/service">Backend</button>
+                        <button class="filter-btn" data-filter="frontend/app">Frontend</button>
+                        <button class="filter-btn" data-filter="unknown/infra">Unknown</button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Live Test Stream</h3>
+                    <p id="streamStatus" class="stream-status">Idle</p>
+                    <div id="streamLog" class="stream-log"></div>
+                    <button id="stopStreamBtn" class="btn btn-ghost btn-small">Stop Stream</button>
+                </div>
+            </aside>
+
+            <main class="grid-wrap">
+                <div class="grid-head">
+                    <h3 id="gridTitle">Solutions</h3>
+                    <p id="gridSubtitle">Loading workspace inventory...</p>
+                </div>
+                <div id="solutionGrid" class="solution-grid"></div>
+            </main>
+        </section>
+    </div>
+
+    <dialog id="detailsDialog" class="details-dialog">
+        <div class="dialog-head">
+            <h3 id="dialogTitle">Solution Details</h3>
+            <button id="closeDialogBtn" class="btn btn-ghost btn-small">Close</button>
+        </div>
+        <div id="dialogBody" class="dialog-body"></div>
+    </dialog>
+
+    <script src="/static/solutions_dashboard.js?v=20260313d"></script>
+</body>
+
+</html>
