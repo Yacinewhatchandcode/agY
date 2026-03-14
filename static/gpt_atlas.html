@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Atlas — RPA Command Center</title>
+    <meta name="description" content="GPT Atlas: AI-powered RPA multi-agent dashboard with real-time web browsing, M4 Max compute, Ollama AI, and fleet orchestration.">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230b1020'/%3E%3Ccircle cx='12' cy='12' r='7' fill='none' stroke='%2344d7b6' stroke-width='1.5'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%2344d7b6'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/gpt_atlas.css">
+</head>
+<body>
+    <!-- ═══════════════════ TOP BAR ═══════════════════ -->
+    <header class="topbar" id="topbar">
+        <div class="topbar-brand">
+            <div class="brand-orb"></div>
+            <span class="brand-name">GPT <strong>ATLAS</strong></span>
+            <span class="brand-tag">COMMAND CENTER</span>
+        </div>
+        <div class="topbar-kpis" id="kpiStrip">
+            <div class="kpi"><span class="kpi-label">AGENTS</span><span class="kpi-value" id="kpiAgentsVal">0</span><span class="kpi-dot dot-green"></span></div>
+            <div class="kpi"><span class="kpi-label">TICKS</span><span class="kpi-value" id="kpiTicksVal">0</span><span class="kpi-dot dot-cyan"></span></div>
+            <div class="kpi"><span class="kpi-label">SEARCHES</span><span class="kpi-value" id="kpiSearchesVal">0</span><span class="kpi-dot dot-blue"></span></div>
+            <div class="kpi"><span class="kpi-label">LATENCY</span><span class="kpi-value" id="kpiLatencyVal">—</span><span class="kpi-dot dot-green"></span></div>
+        </div>
+        <div class="topbar-status">
+            <span class="live-badge" id="liveBadge">● LIVE</span>
+            <span class="topbar-clock" id="clock">--:--:--</span>
+        </div>
+    </header>
+
+    <!-- ═══════════════════ MAIN LAYOUT ═══════════════════ -->
+    <div class="shell">
+        <nav class="sidebar" id="sidebar">
+            <button class="nav-btn active" data-view="browser" title="Browser">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+                <span>Browser</span>
+            </button>
+            <button class="nav-btn" data-view="agents" title="Agent Swarm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Agents</span>
+            </button>
+            <button class="nav-btn" data-view="rpa" title="RPA Tick Bot">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                <span>RPA</span>
+            </button>
+            <button class="nav-btn" data-view="capture" title="Widget Capture">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                <span>Capture</span>
+            </button>
+            <button class="nav-btn" data-view="fleet" title="Fleet & Compute">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="10" height="7" rx="1"/><rect x="14" y="2" width="8" height="7" rx="1"/><rect x="2" y="15" width="20" height="7" rx="1"/></svg>
+                <span>Fleet</span>
+            </button>
+            <button class="nav-btn" data-view="blockchain" title="Blockchain & Rewards">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Chain</span>
+            </button>
+            <button class="nav-btn" data-view="docker" title="Docker Colony">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12.5C22 15.5 19.5 18 16.5 18H5.5C2.5 18 0 15.5 0 12.5C0 9.5 2.5 7 5.5 7h11c3 0 5.5 2.5 5.5 5.5z"/><path d="M7 10v4M11 10v4M15 10v4"/></svg>
+                <span>Colony</span>
+            </button>
+            <button class="nav-btn" data-view="selfcode" title="Self-Coding Engine">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span>SelfCode</span>
+            </button>
+            <button class="nav-btn" data-view="logs" title="Event Log">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Logs</span>
+            </button>
+        </nav>
+
+        <main class="main-content">
+            <!-- ══════ VIEW: BROWSER ══════ -->
+            <section class="view active" id="viewBrowser">
+                <div class="browser-chrome">
+                    <div class="browser-toolbar">
+                        <div class="browser-nav-btns">
+                            <button id="btnBack" class="chrome-btn" title="Back">◀</button>
+                            <button id="btnRefresh" class="chrome-btn" title="Refresh">⟳</button>
+                        </div>
+                        <div class="url-input-wrap">
+                            <div class="url-shield">🔒</div>
+                            <input type="text" id="urlInput" class="url-input" placeholder="Enter URL or search query..." value="https://python.langchain.com">
+                            <button id="btnGo" class="url-go-btn">GO</button>
+                        </div>
+                        <div class="browser-actions">
+                            <button id="btnAnalyze" class="action-btn" title="AI Analyze">🧠 Analyze</button>
+                            <button id="btnVoice" class="action-btn voice-btn" title="Voice Control">🎙️</button>
+                        </div>
+                    </div>
+                    <div class="browser-viewport-wrap">
+                        <div class="browser-viewport" id="browserViewport">
+                            <div class="viewport-loading"><div class="loading-orb"></div><p>Connecting to GPT Atlas browser engine...</p></div>
+                        </div>
+                        <div class="element-highlight" id="elementHighlight"></div>
+                        <div class="ai-cursor" id="aiCursor"><div class="cursor-dot"></div><div class="cursor-label" id="cursorLabel"></div></div>
+                    </div>
+                </div>
+                <div class="ai-assistant-panel" id="aiPanel">
+                    <div class="ai-panel-header">
+                        <span class="ai-panel-title">🧠 AI Assistant</span>
+                        <button class="ai-panel-toggle" id="aiPanelToggle">▼</button>
+                    </div>
+                    <div class="ai-panel-body" id="aiPanelBody">
+                        <div class="ai-command-bar">
+                            <input type="text" id="commandInput" class="ai-command-input" placeholder='Command: "search atlas mongodb" or "click Get Started"'>
+                            <button id="btnRunCommand" class="ai-command-btn">⚡ Run</button>
+                        </div>
+                        <div class="ai-thought-stream" id="thoughtStream">
+                            <div class="thought-entry thought-info">GPT Atlas ready. Enter a URL or voice command.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: AGENTS ══════ -->
+            <section class="view" id="viewAgents">
+                <div class="view-header"><h2>Agent Swarm Monitor</h2></div>
+                <div class="agent-topology" id="agentTopology">
+                    <div class="agent-node agent-active" data-agent="CLAW_MAIN"><div class="agent-pulse"></div><div class="agent-icon">⚙️</div><div class="agent-name">CLAW_MAIN</div><div class="agent-status-text">Orchestrator</div></div>
+                    <div class="agent-node agent-active" data-agent="SEARCHER"><div class="agent-pulse"></div><div class="agent-icon">🔍</div><div class="agent-name">SEARCHER</div><div class="agent-status-text">Web Search</div></div>
+                    <div class="agent-node agent-active" data-agent="CAPTURER"><div class="agent-pulse"></div><div class="agent-icon">📷</div><div class="agent-name">CAPTURER</div><div class="agent-status-text">Screenshot</div></div>
+                    <div class="agent-node agent-active" data-agent="ANALYZER"><div class="agent-pulse"></div><div class="agent-icon">🧠</div><div class="agent-name">ANALYZER</div><div class="agent-status-text">Qwen3 8B (Ollama)</div></div>
+                    <div class="agent-node agent-staging" data-agent="WILLIAM"><div class="agent-pulse"></div><div class="agent-icon">📡</div><div class="agent-name">WILLIAM</div><div class="agent-status-text">WLAN Control</div></div>
+                    <div class="agent-node agent-staging" data-agent="BYTEBOT"><div class="agent-pulse"></div><div class="agent-icon">🤖</div><div class="agent-name">BYTEBOT</div><div class="agent-status-text">Visual Verify</div></div>
+                </div>
+                <div class="agent-table-wrap">
+                    <table class="agent-table" id="agentTable">
+                        <thead><tr><th>Agent</th><th>Status</th><th>Uptime</th><th>Memory</th><th>Last Tick</th><th>Truth</th></tr></thead>
+                        <tbody id="agentTableBody"></tbody>
+                    </table>
+                </div>
+
+                <!-- OLLAMA AI CHAT — Directly in Agents view -->
+                <div class="ai-chat-section">
+                    <div class="view-header">
+                        <h2>🧠 Local AI (Ollama on M4 Max)</h2>
+                        <select id="ollamaModelSelect" class="model-select"><option value="qwen3:8b">qwen3:8b</option></select>
+                    </div>
+                    <div class="ai-chat-output" id="aiChatOutput">
+                        <div class="chat-msg chat-system">Connected to Ollama. Using local Qwen3 8B on Apple M4 Max (32-core GPU, Metal 4).</div>
+                    </div>
+                    <div class="ai-chat-input-bar">
+                        <input type="text" id="aiChatInput" class="ai-chat-input" placeholder="Ask Qwen3 anything — runs locally on your M4 Max...">
+                        <button id="btnAiChat" class="ai-command-btn">🧠 Ask</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: RPA TICK BOT ══════ -->
+            <section class="view" id="viewRpa">
+                <div class="view-header"><h2>RPA Tick Bot Engine</h2>
+                    <div class="view-actions">
+                        <button class="action-btn rpa-start" id="btnTickStart">▶ Start</button>
+                        <button class="action-btn rpa-pause" id="btnTickPause">⏸ Pause</button>
+                        <button class="action-btn rpa-stop" id="btnTickStop">⏹ Stop</button>
+                    </div>
+                </div>
+                <div class="rpa-stats">
+                    <div class="rpa-stat">TICK CYCLE: <strong id="tickCycleNum">#0</strong></div>
+                    <div class="rpa-stat">INTERVAL: <strong id="tickInterval">3000ms</strong></div>
+                    <div class="rpa-stat">MODE: <strong id="tickMode">STOPPED</strong></div>
+                </div>
+                <div class="rpa-pipeline" id="rpaPipeline">
+                    <div class="pipeline-stage" data-stage="capture"><div class="stage-dot"></div><div class="stage-label">1. CAPTURE</div><div class="stage-time">—</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage" data-stage="ocr"><div class="stage-dot"></div><div class="stage-label">2. OCR/VISION</div><div class="stage-time">—</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage" data-stage="decide"><div class="stage-dot"></div><div class="stage-label">3. DECIDE (AI)</div><div class="stage-time">—</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage" data-stage="act"><div class="stage-dot"></div><div class="stage-label">4. ACT</div><div class="stage-time">—</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage" data-stage="verify"><div class="stage-dot"></div><div class="stage-label">5. VERIFY</div><div class="stage-time">—</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-stage" data-stage="log"><div class="stage-dot"></div><div class="stage-label">6. LOG</div><div class="stage-time">—</div></div>
+                </div>
+                <div class="rpa-history-wrap"><h3>Tick History</h3><div class="rpa-history" id="tickHistory"></div></div>
+            </section>
+
+            <!-- ══════ VIEW: WIDGET CAPTURE ══════ -->
+            <section class="view" id="viewCapture">
+                <div class="view-header"><h2>Widget Capture Visualizer</h2>
+                    <div class="view-actions"><button class="action-btn" id="btnSnap">📷 Snap</button></div>
+                </div>
+                <div class="capture-layout">
+                    <div class="capture-feed" id="captureFeed"><div class="capture-placeholder">No captures yet. Use the browser or start RPA ticks.</div></div>
+                    <div class="capture-meta" id="captureMeta">
+                        <h3>Caption</h3>
+                        <div class="meta-field"><span class="meta-label">Widget:</span> <span id="capWidget">—</span></div>
+                        <div class="meta-field"><span class="meta-label">Type:</span> <span id="capType">—</span></div>
+                        <div class="meta-field"><span class="meta-label">Text:</span> <span id="capText">—</span></div>
+                        <div class="meta-field"><span class="meta-label">BBox:</span> <span id="capBbox">—</span></div>
+                        <h3>AI Caption</h3>
+                        <div class="ai-caption" id="aiCaption">—</div>
+                    </div>
+                </div>
+                <div class="capture-gallery" id="captureGallery"></div>
+            </section>
+
+            <!-- ══════ VIEW: FLEET & COMPUTE ══════ -->
+            <section class="view" id="viewFleet">
+                <div class="view-header"><h2>Fleet Status & M4 Compute</h2></div>
+                <h3 class="section-title">Service Health</h3>
+                <div class="fleet-grid" id="fleetGrid">
+                    <div class="fleet-card"><div class="fleet-card-header">Loading fleet status...</div></div>
+                </div>
+                <h3 class="section-title">Apple M4 Max Compute</h3>
+                <div id="computePanel">
+                    <div class="compute-grid">
+                        <div class="compute-card"><div class="compute-label">Loading compute data...</div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: BLOCKCHAIN ══════ -->
+            <section class="view" id="viewBlockchain">
+                <div class="view-header"><h2>PrimeCrypto Blockchain Monitor</h2></div>
+                <div class="blockchain-grid" id="blockchainGrid">
+                    <div class="fleet-card"><div class="fleet-card-header">Loading contracts...</div></div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: DOCKER COLONY ══════ -->
+            <section class="view" id="viewDocker">
+                <div class="view-header"><h2>Docker Colony Workers</h2></div>
+                <div class="docker-grid" id="dockerGrid">
+                    <div class="fleet-card"><div class="fleet-card-header">Scanning colony containers...</div></div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: SELF-CODING ENGINE ══════ -->
+            <section class="view" id="viewSelfcode">
+                <div class="view-header">
+                    <h2>Self-Coding Engine <span class="sc-protocol" id="scProtocol">—</span></h2>
+                    <div class="view-actions">
+                        <button class="action-btn" id="btnScHealth">Health</button>
+                    </div>
+                </div>
+
+                <!-- Engine Status -->
+                <div class="sc-status-bar" id="scStatusBar">
+                    <div class="sc-stat"><span class="sc-label">Engine</span><span class="sc-value" id="scEngine">—</span></div>
+                    <div class="sc-stat"><span class="sc-label">Model</span><span class="sc-value" id="scModel">—</span></div>
+                    <div class="sc-stat"><span class="sc-label">Workers</span><span class="sc-value" id="scWorkers">—</span></div>
+                    <div class="sc-stat"><span class="sc-label">Skills</span><span class="sc-value" id="scSkills">—</span></div>
+                    <div class="sc-stat"><span class="sc-label">Tasks</span><span class="sc-value" id="scTasks">0</span></div>
+                </div>
+
+                <!-- Task Submission -->
+                <div class="sc-submit-panel">
+                    <h3 class="section-title">🧠 New Autonomous Task</h3>
+                    <div class="sc-form">
+                        <input type="text" id="scGoal" class="sc-input" placeholder="Goal: e.g. Add error boundary to all React components">
+                        <select id="scMode" class="sc-select">
+                            <option value="analyze">Analyze</option>
+                            <option value="implement">Implement</option>
+                            <option value="fix">Fix</option>
+                            <option value="full_cycle">Full Cycle</option>
+                        </select>
+                        <input type="text" id="scRepo" class="sc-input sc-input-sm" placeholder="Repo path" value="/Users/yacinebenhamou/workspace">
+                        <button class="action-btn sc-fire-btn" id="btnScFire">🚀 Execute</button>
+                    </div>
+                </div>
+
+                <!-- Active Tasks -->
+                <h3 class="section-title">Active Tasks</h3>
+                <div class="sc-tasks-grid" id="scTasksGrid">
+                    <div class="fleet-card"><div class="fleet-card-header">No tasks yet. Fire one above.</div></div>
+                </div>
+
+                <!-- Thought Terminal -->
+                <h3 class="section-title">🖥️ Thought Stream</h3>
+                <div class="sc-terminal" id="scTerminal">
+                    <div class="sc-terminal-line">[ SelfCode v2 ] Awaiting directive...</div>
+                </div>
+            </section>
+
+            <!-- ══════ VIEW: EVENT LOG ══════ -->
+            <section class="view" id="viewLogs">
+                <div class="view-header"><h2>Event Bus & System Log</h2>
+                    <div class="view-actions"><button class="action-btn" id="btnClearLogs">Clear</button></div>
+                </div>
+                <div class="logs-layout">
+                    <div class="log-panel"><h3>Event Bus <span class="log-badge" id="eventCount">0</span></h3><div class="log-stream" id="eventBus"></div></div>
+                    <div class="log-panel"><h3>System Log <span class="log-badge" id="logCount">0</span></h3><div class="log-stream" id="systemLog"></div></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/gpt_atlas.js"></script>
+</body>
+</html>
