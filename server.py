@@ -864,6 +864,7 @@ BYTEBOT_COLONY_PORTS = {
 }
 SKILLS_DIR = "/Volumes/Extreme SSD/colony/config/skills"
 SELFCODING_MODEL = "qwen3:8b"
+SELFCODING_MODEL_FAST = "qwen2.5:3b"  # For analysis/scanning (parallel-safe)
 
 # Active recursive tasks
 _active_tasks: dict = {}
@@ -933,7 +934,7 @@ Analyze the codebase structure and produce:
 
 Be precise and actionable. Output as structured text."""
 
-    result = await _ollama_generate(prompt)
+    result = await _ollama_generate(prompt, model=SELFCODING_MODEL_FAST)
     return {
         "mode": "analyze",
         "goal": goal,
@@ -1112,6 +1113,160 @@ async def selfcoding_tasks():
         "tasks": list(_active_tasks.values()),
         "count": len(_active_tasks)
     })
+
+
+# ─── PR BABYSITTING ──────────────────────────────────────────────────
+GITHUB_OWNER = "Yacinewhatchandcode"
+GITHUB_REPOS = ["agY", "AMLAZR", "Prime.AI"]
+
+
+@app.get('/api/selfcoding/prs')
+async def selfcoding_prs():
+    """List open PRs across monitored repos with CI status."""
+    all_prs = []
+    github_token = os.environ.get("GITHUB_TOKEN", "")
+    headers = {"Authorization": f"token {github_token}", "Accept": "application/vnd.github.v3+json"} if github_token else {}
+
+    for repo in GITHUB_REPOS:
+        try:
+            async with httpx.AsyncClient(timeout=10) as client:
+                resp = await client.get(
+                    f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/pulls?state=open&per_page=10",
+                    headers=headers
+                )
+                if resp.status_code == 200:
+                    prs = resp.json()
+                    for pr in prs:
+                        pr_num = pr["number"]
+                        # Get CI status
+                        status_resp = await client.get(
+                            f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/commits/{pr['head']['sha']}/status",
+                            headers=headers
+                        )
+                        ci_state = "unknown"
+                        if status_resp.status_code == 200:
+                            ci_state = status_resp.json().get("state", "unknown")
+
+                        all_prs.append({
+                            "repo": repo,
+                            "number": pr_num,
+                            "title": pr["title"],
+                            "author": pr["user"]["login"],
+                            "branch": pr["head"]["ref"],
+                            "ci_status": ci_state,
+                            "url": pr["html_url"],
+                            "created": pr["created_at"],
+                            "updated": pr["updated_at"],
+                        })
+        except Exception as e:
+            all_prs.append({"repo": repo, "error": str(e)})
+
+    return JSONResponse({
+        "prs": all_prs,
+        "count": len(all_prs),
+        "monitored_repos": GITHUB_REPOS
+    })
+
+
+@app.post('/api/selfcoding/prs/babysit')
+async def selfcoding_pr_babysit(request: Request):
+    """Auto-diagnose PR CI failures and generate fix via Ollama.
+
+    Body: { "repo": "agY", "pr_number": 1 }
+    """
+    try:
+        body = await request.json()
+        repo = body.get("repo", "agY")
+        pr_number = body.get("pr_number")
+        if not pr_number:
+            return JSONResponse({"error": "pr_number required"}, status_code=400)
+
+        github_token = os.environ.get("GITHUB_TOKEN", "")
+        headers = {"Authorization": f"token {github_token}", "Accept": "application/vnd.github.v3+json"} if github_token else {}
+
+        async with httpx.AsyncClient(timeout=15) as client:
+            # 1. Get PR details
+            pr_resp = await client.get(
+                f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/pulls/{pr_number}",
+                headers=headers
+            )
+            if pr_resp.status_code != 200:
+                return JSONResponse({"error": f"PR not found: {pr_resp.status_code}"}, status_code=404)
+            pr_data = pr_resp.json()
+
+            # 2. Get changed files
+            files_resp = await client.get(
+                f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/pulls/{pr_number}/files",
+                headers=headers
+            )
+            changed_files = [f["filename"] for f in files_resp.json()] if files_resp.status_code == 200 else []
+
+            # 3. Get CI status
+            status_resp = await client.get(
+                f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/commits/{pr_data['head']['sha']}/status",
+                headers=headers
+            )
+            ci_status = status_resp.json() if status_resp.status_code == 200 else {}
+
+            # 4. Get check runs for failure details
+            checks_resp = await client.get(
+                f"https://api.github.com/repos/{GITHUB_OWNER}/{repo}/commits/{pr_data['head']['sha']}/check-runs",
+                headers=headers
+            )
+            failed_checks = []
+            if checks_resp.status_code == 200:
+                for check in checks_resp.json().get("check_runs", []):
+                    if check.get("conclusion") == "failure":
+                        failed_checks.append({
+                            "name": check["name"],
+                            "output_title": check.get("output", {}).get("title", ""),
+                            "output_summary": check.get("output", {}).get("summary", "")[:500],
+                        })
+
+        # 5. Generate fix via Ollama
+        if not failed_checks and ci_status.get("state") != "failure":
+            return JSONResponse({
+                "status": "healthy",
+                "message": f"PR #{pr_number} in {repo} has no CI failures",
+                "ci_state": ci_status.get("state", "unknown"),
+                "changed_files": changed_files
+            })
+
+        failure_context = "\n".join([
+            f"Check: {c['name']}\nTitle: {c['output_title']}\nSummary: {c['output_summary']}"
+            for c in failed_checks
+        ]) or f"CI state: {ci_status.get('state', 'unknown')}"
+
+        fix_result = await _selfcoding_fix(
+            f"Fix CI failures in PR #{pr_number} ({repo}): {pr_data['title']}",
+            failure_context
+        )
+
+        task_id = f"pr-babysit-{int(time.time())}"
+        _active_tasks[task_id] = {
+            "id": task_id,
+            "goal": f"PR Babysit: {repo}#{pr_number}",
+            "mode": "pr-babysit",
+            "status": "completed",
+            "started": time.time(),
+            "result": {
+                "pr": {"number": pr_number, "title": pr_data["title"], "branch": pr_data["head"]["ref"]},
+                "ci_failures": failed_checks,
+                "changed_files": changed_files,
+                "fix": fix_result
+            }
+        }
+
+        return JSONResponse({
+            "task_id": task_id,
+            "status": "fix_generated",
+            "pr": {"number": pr_number, "repo": repo, "title": pr_data["title"]},
+            "ci_failures": len(failed_checks),
+            "fix": fix_result["fix"]
+        })
+
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
 
 
 async def _ollama_models():
